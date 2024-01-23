@@ -57,7 +57,7 @@ const Navbar = () => {
               Object.values(providers).map((provider) => (
                 <button
                   key={provider.name}
-                  className="black-btn"
+                  className="black_btn"
                   onClick={() => signIn(provider.id)}
                 >
                   Sign in
