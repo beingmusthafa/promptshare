@@ -28,7 +28,7 @@ const Navbar = () => {
         <p className="logo_text">Promptshare</p>
       </Link>
       <div className="sm:flex hidden">
-        {session.user ? (
+        {session?.user ? (
           <div className="flex gap-3 md:gap-5">
             <Link href="/create-prompt" className="black_btn">
               Create post
