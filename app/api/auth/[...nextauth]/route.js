@@ -25,7 +25,7 @@ const handler = NextAuth({
             email: profile.email,
             username: profile.name.replace(" ", "").toLowerCase(),
             image: profile.image,
-          });
+          }).save();
         }
         return true;
       } catch (error) {
