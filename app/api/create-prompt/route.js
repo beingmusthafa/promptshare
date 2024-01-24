@@ -3,10 +3,11 @@ import { connectDb } from "@utils/database";
 
 export const POST = async (req, res) => {
   const { userId, prompt, tag } = await req.json();
+  console.log(userId, prompt, tag);
   try {
     await connectDb();
     await new Prompt({
-      authorId: userId,
+      author: userId,
       prompt,
       tag,
     }).save();

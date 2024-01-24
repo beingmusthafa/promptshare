@@ -16,7 +16,7 @@ const Navbar = () => {
     })();
   }, []);
   return (
-    <nav className=" flex-between w-full mb-16 pt-3">
+    <nav className=" flex-between w-full mb-16 pt-3 fixed top-0 left-0 px-4">
       <Link href="/" className="flex gap-2 flex-center">
         <Image
           src={logo}
@@ -65,6 +65,7 @@ const Navbar = () => {
         {session?.user ? (
           <div className="flex">
             <Image
+              className="rounded-full"
               src={session?.user.image}
               height={30}
               width={30}

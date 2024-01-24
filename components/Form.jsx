@@ -1,26 +1,34 @@
 import Link from "next/link";
-import { useRouter } from "next/router";
 
 const Form = ({ type, isLoading, post, handleSubmit, setPost }) => {
   return (
     <div>
-      <h1>{type} prompt</h1>
-      <p>
+      <h1 className="text-lg font-extrabold">{type} prompt</h1>
+      <p className="text-gray-700 ">
         Show your expertise in AI prompts and help people get their tasks done
         quick and easy
       </p>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="">Prompt</label>
+      <form
+        onSubmit={handleSubmit}
+        className="mt-5 flex flex-col gap-2 items-start max-w-lg"
+      >
+        <label className="font-semibold" htmlFor="">
+          Prompt
+        </label>
         <textarea
+          className="w-full"
           name=""
           id=""
           cols="10"
-          rows="10"
+          rows="7"
           value={post.prompt}
           onChange={(e) => setPost({ ...post, prompt: e.target.value })}
         />
-        <label htmlFor="">Tag</label>
+        <label className="font-semibold" htmlFor="">
+          Tag
+        </label>
         <input
+          className="w-full"
           type="text"
           value={post.tag}
           onChange={(e) => setPost({ ...post, tag: e.target.value })}
@@ -29,7 +37,11 @@ const Form = ({ type, isLoading, post, handleSubmit, setPost }) => {
           <Link href="/" className="text-gray-600 font-semibold">
             Cancel
           </Link>
-          <button disabled={isLoading} type="submit">
+          <button
+            className="bg-primary-orange font-semibold rounded-full text-white p-2"
+            disabled={isLoading}
+            type="submit"
+          >
             {type}
           </button>
         </div>
