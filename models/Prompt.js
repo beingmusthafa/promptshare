@@ -1,7 +1,7 @@
 import { Schema, model, models } from "mongoose";
 
 const promptSchema = new Schema({
-  authorId: {
+  author: {
     type: Schema.Types.ObjectId,
     ref: "User",
     required: [true, "Author id is required"],
